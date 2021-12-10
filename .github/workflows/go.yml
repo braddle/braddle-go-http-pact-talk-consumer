@@ -1,0 +1,26 @@
+name: Go
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Go
+      uses: actions/setup-go@v2
+      with:
+        go-version: 1.17
+        
+    - name: Download Pact 
+      run: curl -LO https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v1.88.80/pact-1.88.80-linux-x86_64.tar.gz
+      
+    - name: Extract Pact
+      run: tar xzf pact-1.88.80-linux-x86_64.tar.gz
+      
+    - name: Test
+      run: go test -v ./...
