@@ -22,5 +22,11 @@ jobs:
     - name: Extract Pact
       run: tar xzf pact-1.88.80-linux-x86_64.tar.gz
       
+    - name: Add Pact to PATH
+      run: echo "{path}" >> $GITHUB_PATH/pact/bin
+      
+    - name: Check Path
+      run: echo "{path}"
+      
     - name: Test
       run: go test -v ./...
