@@ -1,0 +1,1 @@
+# braddle-go-http-pact-talk-consumer
