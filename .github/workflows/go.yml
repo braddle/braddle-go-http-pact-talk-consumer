@@ -23,7 +23,7 @@ jobs:
       run: tar xzf pact-1.88.80-linux-x86_64.tar.gz
       
     - name: Add Pact to PATH
-      run: echo "{path}" >> $GITHUB_PATH/pact/bin
+      run: echo "{path}" >> /pact/bin
       
     - name: Check Path
       run: echo "{path}"
