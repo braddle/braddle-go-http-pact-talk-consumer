@@ -17,15 +17,15 @@ jobs:
         go-version: 1.17
         
     - name: Download Pact
-      working-directory: /
+      working-directory: ~/
       run: curl -LO https://github.com/pact-foundation/pact-ruby-standalone/releases/download/v1.88.80/pact-1.88.80-linux-x86_64.tar.gz
       
     - name: Extract Pact
-      working-directory: /
+      working-directory: ~/
       run: tar xzf pact-1.88.80-linux-x86_64.tar.gz
       
     - name: Add Pact to PATH
-      run: echo "{path}" >> /pact/bin
+      run: echo "{path}" >> ~/pact/bin
       
     - name: Check Path
       run: echo "{path}"
